@@ -4,11 +4,9 @@ import java.sql.Array;
 import java.util.*;
 
 public class phoneDirectory {
-    List<Integer> list = new ArrayList<>();
     static HashMap<String, ArrayList<Integer>> hashMap = new HashMap<>();
     static String name;
     static int number;
-//    static TreeMap<String, ArrayList<Integer>> treeMap = new TreeMap<>();
 
     public static void print(String s) {
         System.out.println(s);
@@ -87,13 +85,11 @@ public class phoneDirectory {
     public static void printHashMap(HashMap<String, ArrayList<Integer>> hashMap) {
         String regex = "\\[|\\]";
         StringBuilder stringBuilder = new StringBuilder();
-//        ArrayList<String> arrayList = new ArrayList<>(hashMap.keySet());
         ArrayList<String> arrayList = new ArrayList<>(sortHashMap(hashMap).keySet());
 
         for (int i = 0; i < arrayList.size(); i++) {
             stringBuilder.append("\n").append("name: ").append(arrayList.get(i));
             stringBuilder.append("\n").append("number: ").append(String.valueOf(hashMap.get(arrayList.get(i))).replaceAll(regex, " "));
-//            stringBuilder.append("\n").append(hashMap.get(arrayList.get(i))).append("\n");
             stringBuilder.append("\n__________________________________\n");
         }
         TreeMap treeMap = new TreeMap();
